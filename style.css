@@ -1,12 +1,16 @@
 /* ---------- BREATHE Lab — basic stylesheet ----------
    Change the colours below to re-theme the whole site.   */
 :root {
-  --accent: #0b5d6b;        /* teal — main brand colour */
-  --accent-dark: #083f49;
+  --accent: #1a1347;        /* QMUL-style navy — headings, buttons, links */
+  --accent-dark: #0f0b2e;   /* darker navy for hover states */
+  --gold: #d4af41;          /* logo gold — secondary accent */
+  --gold-dark: #b8942f;
+  --navy: #1a1347;          /* alias, used by the header */
+  --navy-dark: #0f0b2e;
   --text: #1f2937;
   --muted: #6b7280;
   --bg: #ffffff;
-  --bg-soft: #f4f7f8;
+  --bg-soft: #f4f3f8;
   --border: #e5e7eb;
   --max-width: 1040px;
 }
@@ -33,30 +37,43 @@ h3 { font-size: 1.05rem; margin: 0 0 0.35rem; }
 
 /* ---------- Header / nav ---------- */
 .site-header {
-  background: var(--accent);
-  color: #fff;
+  background: #fff;
+  color: var(--navy);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   position: sticky; top: 0; z-index: 10;
 }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; padding-top: 0.75rem; padding-bottom: 0.75rem;
 }
-.brand { color: #fff; text-decoration: none; display: flex; flex-direction: column; }
+.brand { color: var(--navy); text-decoration: none; display: flex; align-items: center; }
+.brand-logo { height: 92px; width: auto; display: block; }
+/* Kept in case you switch back to a text wordmark */
 .brand-name { font-weight: 700; font-size: 1.35rem; letter-spacing: 0.02em; }
 .brand-sub { font-size: 0.8rem; opacity: 0.85; }
 
 .site-nav { display: flex; gap: 0.25rem; }
 .site-nav a {
-  color: #fff; text-decoration: none; padding: 0.5rem 0.9rem;
-  border-radius: 6px; font-weight: 500;
+  color: var(--navy); background: #fff;
+  text-decoration: none; padding: 0.5rem 0.9rem;
+  border-radius: 6px; font-weight: 600;
+  border: 2px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
 }
-.site-nav a:hover { background: rgba(255,255,255,0.12); color: #fff; }
-.site-nav a.active { background: #fff; color: var(--accent); }
+.site-nav a:hover,
+.site-nav a:focus-visible { border-color: var(--navy); color: var(--navy); background: #fff; }
+.site-nav a.active { border-color: var(--navy); background: #fff; color: var(--navy); }
+.site-nav a.active::after {
+  content: ""; display: block; height: 3px; background: var(--gold);
+  margin: 0.35rem -0.4rem -0.3rem; border-radius: 2px;
+}
 
 .nav-toggle {
-  display: none; background: none; border: 1px solid rgba(255,255,255,0.5);
-  color: #fff; font-size: 1.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; cursor: pointer;
+  display: none; background: #fff; border: 1px solid var(--border);
+  color: var(--navy); font-size: 1.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; cursor: pointer;
 }
+.nav-toggle:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
 
 /* ---------- Tabs ---------- */
 .tab-panel { display: none; padding: 2.5rem 0 3rem; }
@@ -117,8 +134,93 @@ h3 { font-size: 1.05rem; margin: 0 0 0.35rem; }
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
   .grid-3, .grid-2, .people-grid { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+  .brand-logo { height: 58px; }
+  .gallery-box { padding: 1rem; }
   .hero h1 { font-size: 1.8rem; }
   .nav-toggle { display: block; }
   .site-nav { display: none; width: 100%; flex-direction: column; margin-top: 0.75rem; }
   .site-nav.open { display: flex; }
 }
+
+
+/* ---------- Four pillars ---------- */
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.pillar { text-align: center; }
+.pillar-icon {
+  display: block; width: 84px; height: 84px;
+  margin: 0 auto 0.75rem; border-radius: 50%;
+}
+.pillar h3 { color: var(--accent-dark); }
+
+/* ---------- Image gallery ---------- */
+.gallery-box {
+  margin: 2.5rem 0 1rem;
+  padding: 1.5rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.gallery-box h2 { margin-top: 0; }
+.gallery-intro { color: var(--muted); margin-top: 0; }
+.gallery-grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+.gallery-item { margin: 0; }
+/* One rule covers <img>, animated GIFs and <video> alike */
+.gallery-media {
+  display: block; width: 100%; max-height: 70vh; object-fit: contain;
+  border-radius: 8px; background: #000;
+}
+.gallery-item figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 0.4rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .grid-3, .grid-2, .people-grid { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+  .brand-logo { height: 58px; }
+  .gallery-box { padding: 1rem; }
+  .hero h1 { font-size: 1.8rem; }
+  .nav-toggle { display: block; }
+  .site-nav { display: none; width: 100%; flex-direction: column; margin-top: 0.75rem; }
+  .site-nav.open { display: flex; }
+}
+
+
+/* ---------- Four pillars ---------- */
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.pillar { text-align: center; }
+.pillar-icon {
+  display: block; width: 84px; height: 84px;
+  margin: 0 auto 0.75rem; border-radius: 50%;
+}
+.pillar h3 { color: var(--accent-dark); }
+
+/* ---------- Image gallery ---------- */
+.gallery-box {
+  margin: 2.5rem 0 1rem;
+  padding: 1.5rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.gallery-box h2 { margin-top: 0; }
+.gallery-intro { color: var(--muted); margin-top: 0; }
+.gallery-grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+.gallery-item { margin: 0; }
+/* One rule covers <img>, animated GIFs and <video> alike */
+.gallery-media {
+  display: block; width: 100%; max-height: 70vh; object-fit: contain;
+  border-radius: 8px; background: #000;
+}
+.gallery-item figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 0.4rem; }
+
+
+
+/* ---------- Gold accents ---------- */
+.btn { border-bottom: 3px solid var(--gold); }
+.btn-outline { border: 2px solid var(--accent); border-bottom: 3px solid var(--gold); }
+h2 { border-left: 4px solid var(--gold); padding-left: 0.6rem; }
+.gallery-box h2, .hero h1 { border-left: none; padding-left: 0; }
+.person .role { color: var(--accent); }
+.site-footer { border-top: 3px solid var(--gold); }

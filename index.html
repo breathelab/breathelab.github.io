@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BREATHE Lab — QMUL and Barts TB Centre</title>
-  <meta name="description" content="BREATHE Lab: bioengineered models of host–Mycobacterium tuberculosis interaction and post-TB lung recovery, Blizard Institute, Queen Mary University of London.">
+  <meta name="description" content="BREATHE Lab: Bioengineered Respiratory Emulation Approaches for Tuberculosis and Health, Blizard Institute, Queen Mary University of London.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,8 +12,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#home" class="brand" data-tab="home">
-        <span class="brand-name">BREATHE Lab</span>
-        <span class="brand-sub">QMUL and Barts TB Centre · Blizard Institute</span>
+        <img src="images/breathe-lab-logo.png" alt="BREATHE Lab" class="brand-logo">
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <nav class="site-nav" role="tablist">
@@ -31,37 +30,78 @@
     <!-- ================= HOME ================= -->
     <section id="home" class="tab-panel active">
       <div class="hero">
-        <h1>Bioengineering for Respiratory Infections</h1>
+        <h1>Laboratory of Bioengineered Respiratory Emulation Approaches for Tuberculosis and Health</h1>
         <p class="lead">
-          We build human in vitro models — alveolus-on-chip, iPSC-derived lung cells and
-          engineered tissues — to understand how <em>Mycobacterium tuberculosis</em> interacts
-          with the lung, and why the lung so often fails to recover after TB is cured.
+          We develop cutting-edge human <em>in vitro</em> lung models using human induced pluripotent stem cells (iPSC) to understand how <em>Mycobacterium tuberculosis</em> interacts
+          with the lung innate immunity, and what determines the success or failure of anitmicrobial responses and tissue homeostasis.
         </p>
         <div class="hero-actions">
           <a href="#research" data-tab="research" class="btn">Our research</a>
-          <a href="#contact" data-tab="contact" class="btn btn-outline">Join or collaborate</a>
+          <a href="#contact" data-tab="contact" class="btn btn-outline">Contact us</a>
         </div>
       </div>
 
-      <div class="grid-3">
-        <div class="card">
-          <h3>New Approach Methodologies</h3>
-          <p>Human-relevant, animal-free models of host–pathogen interaction, built on microfabrication and stem-cell engineering.</p>
+      <!-- Four pillars: edit the text freely. Swap the emoji for <img src="images/..."> if you prefer icons. -->
+      <div class="grid-4">
+        <div class="card pillar">
+          <img src="images/icon-bacteria.svg" alt="Illustration of rod-shaped bacteria" class="pillar-icon">
+          <h3>Bacteria</h3>
+          <p>Development of <em>Mycobacterium tuberculosis</em> reporter systems to reveal the heterogeonous bacterial states that overcomes host early innate immune responses.</p>
         </div>
-        <div class="card">
-          <h3>Post-TB lung disease</h3>
-          <p>Mechanisms of fibrosis and impaired recovery after treatment, linking in vitro findings to patient cohorts in East London.</p>
+        <div class="card pillar">
+          <img src="images/icon-cell.svg" alt="Illustration of a cell with nucleus" class="pillar-icon">
+          <h3>Cell</h3>
+          <p>Differentiation of alveolar epithelium, macrophages, endothelium and disease-relevant cell types from genetically defined iPSC to establish host genetic requirements.</p>
         </div>
-        <div class="card">
-          <h3>Translational focus</h3>
-          <p>Embedded in the QMUL and Barts TB Centre with access to clinical cohorts, CL3 facilities and the Centre of Predictive in vitro Models.</p>
+        <div class="card pillar">
+          <img src="images/icon-device.svg" alt="Illustration of a microfluidic chip" class="pillar-icon">
+          <h3>Device</h3>
+          <p>Eningeering of fit-for-purpose microfluidic organ-on-chip system to emulate the distinct pathophysiological and microenvironmental features of TB.</p>
+        </div>
+        <div class="card pillar">
+          <img src="images/icon-patients.svg" alt="Illustration of two people" class="pillar-icon">
+          <h3>Patients</h3>
+          <p>Translation of lab-generated knowledge to clinincal TB patients in East London, and incorporation of key clinical observations to develop disease-inspired <em>in vitro</em> models.</p>
         </div>
       </div>
+
+      <!-- Image gallery: three media slots. Each accepts a still image, an animated GIF, or a looping video. -->
+      <section class="gallery-box">
+                <div class="gallery-grid">
+
+          <!-- SLOT 1 — still image (jpg / png / tif-export) -->
+          <figure class="gallery-item">
+            <img class="gallery-media" src="images/iAlvoC_full.png"
+                 alt="Alveolus-on-chip, epithelial monolayer">
+            <figcaption>An overview of an iPSC-derived alveolus-on-chip.</figcaption>
+            <figcaption>Image showing nuclei (cyan), CD16 (magenta), vWF (yellow), and ZO-1 (white)</figcaption>
+            <figcaption>Ref: DOI: 10.1126/sciadv.aea9874</figcaption>
+          </figure>
+
+          <!-- SLOT 2 — animated GIF (loops on its own; just point src at a .gif) -->
+          <figure class="gallery-item">
+            <img class="gallery-media" src="images/iAlvoC_3D.gif"
+                 alt="Time-lapse of macrophage recruitment">
+            <figcaption>A 3D reconstruction of alveolar macrophage residing on the alveolar epithelium of an iPSC-derived alveolus-on-chip.</figcaption>
+            <figcaption>Image showing nuclei (cyan), CD16 (magenta), vWF (yellow), and ZO-1 (white)</figcaption>
+          </figure>
+
+          <!-- SLOT 3 — animated GIF (loops on its own; just point src at a .gif) -->
+          <figure class="gallery-item">
+            <img class="gallery-media" src="images/infected_iAlvoC_3D-1.gif"
+                 alt="Time-lapse of macrophage recruitment">
+            <figcaption>A 3D reconstruction of a necrotic core-like structure formed subsequent to <em>M. tuberculosis</em> infection.</figcaption>
+            <figcaption>Image showing nuclei (blue), dead cells (magenta), ZO-1 (yellow), and <em>M. tuberculosis</em> (white)</figcaption>
+          </figure>
+
+        
+        </div>
+      </section>
 
       <h2>News</h2>
       <ul class="news-list">
-        <li><span class="date">Month 2026</span> Placeholder news item — edit this in <code>index.html</code>.</li>
-        <li><span class="date">Month 2026</span> Placeholder news item.</li>
+        <li><span class="date">July 2026</span> The establishment of BREATHE lab at Blizard Institute.</li>
+        
       </ul>
     </section>
 
@@ -69,27 +109,27 @@
     <section id="research" class="tab-panel">
       <h1>Research</h1>
       <p class="lead">
-        Our work sits at the interface of TB immunology, macrophage biology and tissue engineering.
-        Replace the text below with your own themes.
+        Our work sits at the interface of infection microbiology and bioengineering. 
+        We believe the development of <strong>physiologically relevant</strong> and <strong>fit for purpose complex</strong> <em>in vitro</em> lung models will enable us to better emulate and understand the host-TB interactions and TB pathogenesis.
+        
       </p>
 
       <article class="research-theme">
-        <h2>1. Alveolus-on-chip models of TB infection</h2>
-        <p>Placeholder description of the microphysiological systems used to model the alveolar niche, air–liquid interface, and macrophage–epithelial crosstalk during <em>M. tuberculosis</em> infection.</p>
+        <h2>1. Alveolus-on-Chip models for early host-TB interactions</h2>
+        <p>Aerosol droplets carring <em>M. tuberculosis</em> land in the alveolus, the bacteria are captured by alveolar macrophages that serve as the 
+         earliest gatekeeper of whether the bacterial invasion is successful. <em>M. tuberculosis</em> has evolved a sophisicated arsenal of pathogenic effectors to evade the 
+        host innate and adaptive immunity, yet only a fraction of exposed individuals developed Tuberculosis. Tuberculosis has an asymtopmatic phase of months, which makes the 
+        earliest phases of the infection clinically inaccessible, while animal models have limitation in recapitulating the pathogenesis of a human pathogen. 
+      To address the technological and scientific gaps, we apply iPSC-derived alveolus-on-chip models to investigate the early host-<em>M. tuberculosis</em> interactions that 
+    determine the success of bacterial invasion and niche formation.</p>
       </article>
 
-      <article class="research-theme">
-        <h2>2. Macrophage biology and host–pathogen interaction</h2>
-        <p>Placeholder description of how macrophages handle intracellular Mtb, antigen trafficking, and the determinants of control versus progression.</p>
-      </article>
+    
+      <h2>Fundings</h2> 
+      <p>Bart's Charity</p>
 
-      <article class="research-theme">
-        <h2>3. Post-TB lung fibrosis and recovery</h2>
-        <p>Placeholder description of in vitro fibrosis models and the mechanistic drivers of persistent lung damage after successful TB treatment.</p>
-      </article>
-
-      <h2>Funding and partners</h2>
-      <p>List funders, collaborators and institutional partners here (e.g. Barts Charity, QMUL, Centre of Predictive in vitro Models).</p>
+      <h2>Collaborators</h2>
+      <p>Maximilliano G. Gutierrez - The Francis Crick Institute</p>
     </section>
 
     <!-- ================= LAB MEMBERS ================= -->
@@ -99,75 +139,36 @@
       <h2>Principal Investigator</h2>
       <div class="people-grid">
         <div class="person">
-          <img src="images/placeholder-person.svg" alt="Photo of Min Wen Ku">
-          <h3>Dr Min Wen Ku</h3>
-          <p class="role">Lecturer, QMUL and Barts TB Centre, Blizard Institute</p>
-          <p>Short biography placeholder — training, research interests, and a line on what you are looking for in collaborators and students.</p>
+          <img src="images/j_luk.jpeg" alt="Photo of Jakson Luk">
+          <h3>Dr Jakson Luk</h3>
+          <p class="role">Lecturer in Tuberculosis Science</p>
+          <p class="role">QMUL and Barts TB Centre</p>
+          <p class="role">Centre for Immunobiology and Infection</p>
+          <p class="role">Blizard Institute</p>
+          <p>Jakson is trained as a infection microbiologist and an autodidactic bioengineer. He is interested in developing complex <em>in vitro</em> lung models to study host-TB interactions and other pulmonary diseases.</p>
         </div>
       </div>
 
-      <h2>Team</h2>
-      <div class="people-grid">
-        <div class="person">
-          <img src="images/placeholder-person.svg" alt="">
-          <h3>Name</h3>
-          <p class="role">PhD student</p>
-          <p>One-line description of project.</p>
-        </div>
-        <div class="person">
-          <img src="images/placeholder-person.svg" alt="">
-          <h3>Name</h3>
-          <p class="role">Postdoctoral researcher</p>
-          <p>One-line description of project.</p>
-        </div>
-        <div class="person">
-          <img src="images/placeholder-person.svg" alt="">
-          <h3>Name</h3>
-          <p class="role">Research technician</p>
-          <p>One-line description of role.</p>
-        </div>
-      </div>
-
-      <h2>Alumni</h2>
-      <ul>
-        <li>Name — role, years — now at …</li>
-      </ul>
+    
     </section>
 
     <!-- ================= PUBLICATIONS ================= -->
     <section id="publications" class="tab-panel">
       <h1>Publications</h1>
-      <p>Selected publications. Replace with your own list (or link to <a href="#">Google Scholar</a> / <a href="#">ORCID</a>).</p>
-
+      <h2>Selected Publication</h2>
       <h2>2026</h2>
       <ol class="pub-list">
         <li>
-          <span class="pub-authors">Author A, Author B, <strong>Ku MW</strong>.</span>
-          <span class="pub-title">Title of the paper.</span>
-          <span class="pub-journal"><em>Journal</em> (2026).</span>
-          <a href="#" class="pub-link">DOI</a>
+          <span class="pub-authors"><strong>Luk CH</strong>, Conway GL, Goh KJ, Fearns A, Rodriguez-Hernandez I, Day NJ, Athanasiadi N, D'Antuono R, Pellegrino E, Stucki JD, Hobi N, Gutierrez MG.</span>
+          <span class="pub-title">Autologous human iPSC-derived alveolus-on-chip reveals early pathological events of Mycobacterium tuberculosis infection.</span>
+          <span class="pub-journal"><em>Science Advances</em> (2026).</span>
+          <a href="https://doi.org/10.1126/sciadv.aea9874" class="pub-link">DOI</a>
         </li>
       </ol>
 
-      <h2>2025</h2>
-      <ol class="pub-list">
-        <li>
-          <span class="pub-authors">Author A, <strong>Ku MW</strong>, Author C.</span>
-          <span class="pub-title">Title of the paper.</span>
-          <span class="pub-journal"><em>Journal</em> (2025).</span>
-          <a href="#" class="pub-link">DOI</a>
-        </li>
-      </ol>
+      <h2>Full publication list</h2>
+      <a href="https://scholar.google.com/citations?user=WULEQcsAAAAJ&hl=en&oi=ao">Google Scholar</a>
 
-      <h2>Preprints</h2>
-      <ol class="pub-list">
-        <li>
-          <span class="pub-authors"><strong>Ku MW</strong>, et al.</span>
-          <span class="pub-title">Title of the preprint.</span>
-          <span class="pub-journal"><em>bioRxiv</em> (2026).</span>
-          <a href="#" class="pub-link">Link</a>
-        </li>
-      </ol>
     </section>
 
     <!-- ================= CONTACT ================= -->
@@ -178,30 +179,32 @@
         <div>
           <h2>Get in touch</h2>
           <p>
-            <strong>Dr Min Wen Ku</strong><br>
+            <strong>Dr Jakson Luk</strong><br>
             BREATHE Lab<br>
             QMUL and Barts TB Centre<br>
+            Centre for Immunobiology and Infection<br>
             Blizard Institute<br>
             Queen Mary University of London<br>
             4 Newark Street, London E1 2AT, UK
           </p>
-          <p>Email: <a href="mailto:your.email@qmul.ac.uk">your.email@qmul.ac.uk</a></p>
+          <p>Email: <a href="mailto:c.h.luk@qmul.ac.uk">c.h.luk@qmul.ac.uk</a></p>
           <p>
-            <a href="#">Google Scholar</a> ·
-            <a href="#">ORCID</a> ·
-            <a href="#">LinkedIn</a> ·
-            <a href="#">Bluesky / X</a>
+            <a href="https://scholar.google.com/citations?user=WULEQcsAAAAJ&hl=en&oi=ao">Google Scholar</a> ·
+            <a href="https://orcid.org/0000-0002-5155-2257">ORCID</a> ·
+            <a href="https://www.linkedin.com/in/jakson-luk-2baa95114/">LinkedIn</a>
           </p>
         </div>
         <div>
           <h2>Join the lab</h2>
-          <p>We welcome enquiries from prospective PhD students, postdocs and visiting researchers with interests in TB immunology, macrophage biology, lung tissue engineering or organ-on-chip technology.</p>
-          <p>Please email a short cover note and CV. Funded positions will be advertised on this page and on <a href="#">jobs.qmul.ac.uk</a>.</p>
+          <p>We welcome enquiries from prospective PhD students and postdocs with interests in host-TB interactions, stem cell engineering and lung-on-chip technology.</p>
+          <p>Please email a short cover note and CV. Funded positions will be advertised on this page and on <a href="https://www.qmul.ac.uk/jobs/vacancies/">https://www.qmul.ac.uk/jobs/vacancies/</a>.</p>
         </div>
       </div>
     </section>
 
   </main>
+
+
 
   <footer class="site-footer">
     <div class="container">
@@ -238,6 +241,7 @@
         const open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open);
       });
+
 
       show(location.hash.slice(1) || 'home');
       document.getElementById('year').textContent = new Date().getFullYear();
